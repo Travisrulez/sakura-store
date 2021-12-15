@@ -1,0 +1,45 @@
+@import 'post_add.scss';
+
+.form {
+    &__item.short-form {
+        width: 18%;
+    }
+
+    &__item.age {
+        input {
+            padding-left: 30px;
+        }
+    }
+
+    &__item.escort {
+        width: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        
+        input {
+            width: 28px;
+            height: 28px;
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .form {
+        &__item.adult, &__item.child {
+            width: 49%;
+        }
+
+        &__item.time, &__item.count {
+            width: 31%;
+        }
+    }
+}
+
+@media screen and (max-width: 576.02px) {
+    .form {
+        &__item.age {
+            width: 86% !important;
+        }
+    }
+}

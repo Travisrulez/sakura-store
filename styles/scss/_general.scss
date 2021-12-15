@@ -1,0 +1,218 @@
+@import './style';
+
+body.locked {
+    overflow: hidden;
+}
+
+.header {
+    padding: 15px 0;
+    border-bottom: 1px solid $gray;
+    align-items: center;
+    height: 70px;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__navigation {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    &__links {
+        display: flex;
+        margin-right: auto;
+        margin-left: 30px;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        border: none;
+        outline: none;
+        background: none;
+        color: $black;
+        position: relative;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: '';
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background-color: $black;
+            transition: width .2s ease-in-out;
+        }
+
+        &:hover:after {
+            width: 100%;
+        }
+    }
+
+    &__logo {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        font-weight: $bold;
+        font-size: 20px;
+        text-decoration: none;
+        color: $black;
+
+        @media screen and (max-width: 768px) {
+            flex: 3;
+        }
+    }
+
+    &__cart {
+        flex: 1;
+        display: flex;
+        width: 35px;
+        height: 35px;
+
+        .shopping-cart {
+            margin-left: auto;
+            cursor: pointer;
+            position: relative;
+
+            &__count {
+                position: absolute;
+                right: -2px;
+                bottom: -3px;
+                width: 18px;
+                height: 18px;
+                background-color: rgb(192, 51, 51);
+                border-radius: 50%;
+                color: $white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 13px;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.menu-icon {
+    padding: 7px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 400px;
+    background-color: #fff;
+    transition: transform .5s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 2;
+    padding: 80px 30px;
+
+    &.active {
+        transition: transform .5s ease-in-out;
+        transform: translateX(0);
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__link {
+        text-decoration: none;
+        position: relative;
+        color: $black;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        font-size: 18px;
+        width: fit-content;
+
+        &:after {
+            position: absolute;
+            display: block;
+            content: '';
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background-color: $black;
+            transition: width .2s ease-in-out;
+        }
+
+        &:hover:after {
+            width: 100%;
+        }
+    }
+
+    .close-menu-icon {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 35px;
+        height: 35px;
+        padding: 10px;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        width: 100%;
+    }
+}
+
+.main {
+    min-height: calc(100vh - 140px);
+}
+
+.footer {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $gray;
+    margin-top: 30px;
+
+    @media screen and (max-width: 576px) {
+        font-size: 14px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    transition: .5s ease-in-out;
+    visibility: hidden;
+}

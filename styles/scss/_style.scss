@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import './consts';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, input, button, textarea {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: $container-xl;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1200px) {
+        max-width: $container-l;
+    }
+
+    @media screen and (max-width: 992px) {
+        max-width: $container-m;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: $container-s;
+    }
+
+    @media screen and (max-width: 576px) {
+        max-width: $container-xs;
+        padding: 0 15px;
+    }
+}
+
+h1.title {
+    font-size: 40px;
+    font-weight: 500;
+
+    @media screen and (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.input {
+    border: 1px solid $black;
+    outline: none;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: $white;
+    background-color: $black;
+    cursor: pointer;
+
+    &.btn-secondary {
+        color: $black;
+        background-color: $white;
+        border: 1px solid $black;
+    }
+}
+
+.preload * {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+    

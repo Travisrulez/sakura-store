@@ -1,0 +1,53 @@
+@import './general';
+
+.payment {
+    &__container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    &__form {
+        margin-top: 30px;
+    }
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 47%;
+        margin-bottom: 30px;
+
+        input {
+            width: 100%;
+        }
+        
+        label {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        select {
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            appearance:none;
+        }
+
+        textarea {
+            width: 100%;
+            resize: none;
+        }
+
+        button {
+            margin-top: 35px;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}

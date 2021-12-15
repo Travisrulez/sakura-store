@@ -1,0 +1,156 @@
+@import 'post_add.scss';
+
+.form {
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    .image-container {
+        width: 100%;
+        min-height: 200px;
+        padding: 15px 10px;
+        border: 1px solid #999;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .image-item {
+            position: relative;
+            width: 23%;
+            min-height: 180px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 10px 1% 20px;
+
+            .loupe {
+                position: absolute;
+                width: 100%;
+                height: 140px;
+                background: url(../../img/icons/loupe.png) center no-repeat;
+                background-size: 30%;
+                background-color: rgba(70, 70, 70, 0.9);
+                opacity: 0;
+                transition: opacity .2s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 140px;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                object-fit: cover;
+            }
+
+            a {
+                padding: 10px;
+                border: none;
+                outline: none;
+                color: #fff;
+                background-color: rgb(128, 0, 0);
+                cursor: pointer;
+                transition: background-color .1s ease-in-out;
+                font-weight: 700;
+                text-decoration: none;
+                border-radius: 5px;
+                text-align: center;
+    
+                &:hover {
+                    background-color: rgb(179, 0, 0);
+                }
+            }
+        }
+    }
+}
+
+.fullsize-image {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 65%;
+    max-height: 90vh;
+    z-index: 6;
+    opacity: 0;
+    transition: all .3s ease-out;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .close-image {
+        color: #fff;
+        position: absolute;
+        top: -13px;
+        right: -40px;
+        left: auto;
+        font-size: 40px;
+        cursor: pointer;
+    }
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 5;
+    backdrop-filter: blur(3px);
+    transition: opacity .3s ease-in-out;
+}
+
+@media screen and (max-width: 1200.02px) {
+    .form {
+        .image-container {
+            .image-item {
+                width: 31%;
+                margin: 10px 1% 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992.02px) {
+    .form {
+        .image-container {
+            justify-content: space-between;
+
+            .image-item {
+                width: 46%;
+                margin: 10px 1% 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 526.02px) {
+    .form {
+        .image-container {
+            .image-item {
+                width: 100%;
+                margin: 10px 0 20px;
+
+                .loupe {
+                    display: none;
+                }
+            }
+        }
+    }
+    .fullsize-image {
+        display: none;
+    }
+}
+

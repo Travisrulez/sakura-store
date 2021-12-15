@@ -1,0 +1,20 @@
+.modal {
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    padding: 30px 50px;
+    z-index: 10;
+    border-radius: 5px;
+    transform: translateY(130%);
+    transition: transform .5s ease-in-out;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.modal.success {
+    background-color: rgb(209, 255, 200);
+    border: 2px solid rgb(98, 209, 79);
+    color: rgb(33, 100, 21);
+}

@@ -1,0 +1,43 @@
+@import 'allposts.scss';
+
+.container {
+    min-height: 100vh;
+    .wrapper {
+        .posts {
+            &__item {
+                width: 100%;
+                min-height: auto;
+                padding: 10px 20px;
+
+                .image {
+                    width: 30px;
+                    max-height: 30px;
+                    min-height: auto;
+                }
+
+                .content {
+                    width: 100%;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+
+                    a {
+                        margin: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576.02px) {
+    .container {
+        .wrapper {
+            .posts {
+                &__item {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
